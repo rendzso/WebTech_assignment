@@ -42,6 +42,12 @@ body{
     transition-duration: 0.5s;
 }
 
+.dropbtn:hover:active{
+    box-shadow: 0 2px #610004;
+    transform: translateY(4px);
+    transition-duration: 0.1s;
+}
+
 .dropclass{
     text-align: center;
     display: none;
@@ -71,6 +77,12 @@ body{
     margin-left: 15px;
     margin-right: 15px;
 
+}
+
+.menuButton a:link:hover:active {
+    box-shadow: 0 2px #610004;
+    transform: translateY(4px);
+    transition-duration: 0.1s;
 }
 
 .menuButton a:link:hover{
