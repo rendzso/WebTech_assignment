@@ -73,3 +73,32 @@ function openManufacturer() {
     })
 
 }
+
+
+function menufunction() {
+    document.getElementById("menuBar").classList.toggle("show");
+    document.getElementById("banner").classList.toggle("place");
+}
+
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn') && !event.target.matches('.menuButton a') ) {
+
+        var dropdowns = document.getElementsByClassName("dropclass");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+
+        var dropdowns2 = document.getElementsByClassName("banner");
+        var j;
+        for (j = 0; j < dropdowns2.length; j++) {
+            var openDropdown2 = dropdowns2[j];
+            if (openDropdown2.classList.contains('place')) {
+                openDropdown2.classList.remove('place');
+            }
+        }
+    }
+}
