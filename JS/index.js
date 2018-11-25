@@ -1,7 +1,5 @@
 $(document).ready(function () {
     $("#content").load("home.html");
-    openCar();
-    openManufacturer();
 
     $.each($('.menuButton'), function (mbIndex, mbValue) {
         $(mbValue).click(function (event) {
@@ -9,6 +7,8 @@ $(document).ready(function () {
 
             if ($(this).find('a').attr("href") !== "index.html") {
                 $("#content").load($(this).find('a').attr("href"));
+                if ($(this).find('a').attr("href") == "home.html"){
+                }
             }
             else {
                 open("index.html", "_self");
@@ -19,11 +19,11 @@ $(document).ready(function () {
 
 function openCar() {
     $.getJSON('cars', function (data) {
-        var table = $('<table class="CarTable"></table>');
+        var table = $('<table></table>');
         table.append("<tr><th>Name</th><th>Consumption</th><th>Color</th><th>Manufacturer</th><th>Year</th><th>Available</th><th>Horsepower</th></tr>");
 
         $.each(data, function (key, value) {
-                var row = $('<tr class="notFirstRow"></tr>');
+                var row = $('<tr></tr>');
                 var nameCell = $('<td >' + value.name + ' </td>');
                 var consumptionCell = $('<td>' + value.consumption + '</td>');
                 var colorCell = $('<td>' + value.color + '</td>');
@@ -44,6 +44,7 @@ function openCar() {
             }
         );
 
+        $("#DatabaseContentManufacturers").empty();
         $("#DatabaseContentCars").html(table);
 
     })
@@ -52,11 +53,11 @@ function openCar() {
 
 function openManufacturer() {
     $.getJSON('manufacturers', function (data) {
-        var table = $('<table class="ManufacturerTable"></table>');
+        var table = $('<table></table>');
         table.append("<tr><th>Name</th><th>Consumption</th><th>Color</th></tr>");
 
         $.each(data, function (key, value) {
-                var row = $('<tr class="notFirstRow"></tr>');
+                var row = $('<tr></tr>');
                 var nameCell = $('<td onclick="ManufacturerCookie(' + "'" + value.name + "'" + ')">' + value.name + '</td>');
                 var countryCell = $('<td onclick="ManufacturerCookie(' + "'" + value.name + "'" + ')">' + value.country + '</td>');
                 var foundedCell = $('<td onclick="ManufacturerCookie(' + "'" + value.name + "'" + ')">' + value.founded + '</td>');
@@ -68,6 +69,7 @@ function openManufacturer() {
             }
         );
 
+        $("#DatabaseContentCars").empty();
         $("#DatabaseContentManufacturers").html(table);
 
     })
@@ -101,4 +103,26 @@ window.onclick = function(event) {
             }
         }
     }
+}
+
+function CarLoad() {
+
+    if ($("#DatabaseContentCars").is(':empty')) {
+        openCar();
+    }
+    else {
+        $("#DatabaseContentCars").empty();
+    }
+
+}
+
+function ManufacturerLoad() {
+
+    if ($("#DatabaseContentManufacturers").is(':empty')) {
+        openManufacturer();
+    }
+    else {
+        $("#DatabaseContentManufacturers").empty();
+    }
+
 }

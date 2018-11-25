@@ -14,9 +14,67 @@ body{
     background-color: #147d17;
 }
 
-#content{
-
+#image{
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    z-index: -1;
 }
+
+#content{
+    text-align: center;
+}
+
+#buttons{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+#DatabaseContentCars{
+    width: 60%;
+    margin-left: 20%;
+}
+
+#DatabaseContentCars table{
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+}
+
+#DatabaseContentCars table tr,#DatabaseContentCars table th, #DatabaseContentManufacturers table tr, #DatabaseContentManufacturers table th {
+    background-color: #173501;
+    color: whitesmoke;
+    border: 2px solid beige;
+}
+
+#DatabaseContentCars table td, #DatabaseContentManufacturers table td{
+    border: 2px solid beige;
+}
+
+#DatabaseContentCars table th, #DatabaseContentManufacturers table th{
+    background-color: black;
+}
+
+#DatabaseContentCars table tr:nth-child(even), #DatabaseContentManufacturers table tr:nth-child(even){
+    background-color: #6d0004;
+}
+
+#DatabaseContentCars table tr:hover, #DatabaseContentManufacturers table tr:hover{
+    background-color: whitesmoke;
+    color: black;
+}
+
+#DatabaseContentManufacturers{
+    width: 45%;
+    margin-left: 27.5%;
+}
+
+#DatabaseContentManufacturers table{
+    border-collapse: collapse;
+    text-align: left;
+    width: 100%;
+}
+
 
 .dropbtn{
     background-color: black;
