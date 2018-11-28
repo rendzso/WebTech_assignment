@@ -108,46 +108,46 @@ body{
 
 /*HOME CSS*/
 
-#DatabaseContentCars{
+#Cartable{
     width: 60%;
     margin-left: 20%;
 }
 
-#DatabaseContentCars table{
+#Cartable table{
     border-collapse: collapse;
     text-align: left;
     width: 100%;
 }
 
-#DatabaseContentCars table tr,#DatabaseContentCars table th, #DatabaseContentManufacturers table tr, #DatabaseContentManufacturers table th {
+#Cartable table tr,#Cartable table th, #Manufacturertable table tr, #Manufacturertable table th {
     background-color: #173501;
     color: whitesmoke;
     border: 2px solid beige;
 }
 
-#DatabaseContentCars table td, #DatabaseContentManufacturers table td{
+#Cartable table td, #Manufacturertable table td{
     border: 2px solid beige;
 }
 
-#DatabaseContentCars table th, #DatabaseContentManufacturers table th{
+#Cartable table th, #Manufacturertable table th{
     background-color: black;
 }
 
-#DatabaseContentCars table tr:nth-child(even), #DatabaseContentManufacturers table tr:nth-child(even){
+#Cartable table tr:nth-child(even), #Manufacturertable table tr:nth-child(even){
     background-color: #6d0004;
 }
 
-#DatabaseContentCars table tr:hover, #DatabaseContentManufacturers table tr:hover{
+#Cartable table tr:hover, #Manufacturertable table tr:hover{
     background-color: whitesmoke;
     color: black;
 }
 
-#DatabaseContentManufacturers{
+#Manufacturertable{
     width: 45%;
     margin-left: 27.5%;
 }
 
-#DatabaseContentManufacturers table{
+#Manufacturertable table{
     border-collapse: collapse;
     text-align: left;
     width: 100%;

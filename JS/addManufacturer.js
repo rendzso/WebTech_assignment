@@ -8,7 +8,7 @@ $(function () {
                 url: 'addManufacturers',
                 data: $('form').serialize(),
                 success: function () {
-                    openManufacturer();
+                    getManufacturer();
                     alert("Put in");
 
                 },

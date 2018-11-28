@@ -48,32 +48,32 @@
     color: whitesmoke;
 }
 
-#CookieTable table{
+#ManuCookie table{
     border-collapse: collapse;
     text-align: left;
     margin-left: 20%;
     margin-top: 5%;
 }
 
-#CookieTable tr, th{
+#ManuCookie tr, th{
     background-color: #173501;
     color: whitesmoke;
     border: 2px solid beige;
 }
 
-#CookieTable td{
+#ManuCookie td{
     border: 2px solid beige;
 }
 
-#CookieTable th{
+#ManuCookie th{
     background-color: black;
 }
 
-#CookieTable tr:nth-child(even){
+#ManuCookie tr:nth-child(even){
     background-color: #6d0004;
 }
 
-#CookieTable tr:hover{
+#ManuCookie tr:hover{
     background-color: whitesmoke;
     color: black;
 }

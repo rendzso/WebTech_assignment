@@ -1,5 +1,5 @@
 
-$(ManufacturerNames());
+$(getNames());
 
 $(function () {
     $('form').on("submit", function (e) {
@@ -11,7 +11,7 @@ $(function () {
                 url: 'addCar',
                 data: $('form').serialize(),
                 success: function () {
-                    openCar();
+                    getCar();
                     alert("Put in");
                 },
                 error: function () {
@@ -21,7 +21,7 @@ $(function () {
     })
 })
 
-function ManufacturerNames() {
+function getNames() {
     $.getJSON('manufacturerNames', function (data) {
         var output = [];
 
@@ -30,7 +30,7 @@ function ManufacturerNames() {
 
         });
 
-        $("#ManufacturerNameList").html(output);
+        $("#TheNames").html(output);
     });
 }
 

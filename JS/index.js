@@ -16,7 +16,7 @@ $(document).ready(function () {
     })
 });
 
-function openCar() {
+function getCar() {
     $.getJSON('cars', function (data) {
         var table = $('<table></table>');
         table.append("<tr><th>Name</th><th>Consumption</th><th>Color</th><th>Manufacturer</th><th>Year</th><th>Available</th><th>Horsepower</th></tr>");
@@ -43,14 +43,14 @@ function openCar() {
             }
         );
 
-        $("#DatabaseContentManufacturers").empty();
-        $("#DatabaseContentCars").html(table);
+        $("#Manufacturetable").empty();
+        $("#Cartable").html(table);
 
     })
 
 }
 
-function openManufacturer() {
+function getManufacturer() {
     $.getJSON('manufacturers', function (data) {
         var table = $('<table></table>');
         table.append("<tr><th>Name</th><th>Contry</th><th>Date</th></tr>");
@@ -68,8 +68,8 @@ function openManufacturer() {
             }
         );
 
-        $("#DatabaseContentCars").empty();
-        $("#DatabaseContentManufacturers").html(table);
+        $("#Cartable").empty();
+        $("#Manufacturertable").html(table);
 
     })
 
@@ -104,35 +104,33 @@ window.onclick = function(event) {
     }
 }
 
-function CarLoad() {
+function CarOpen() {
 
-    if ($("#DatabaseContentCars").is(':empty')) {
-        openCar();
+    if ($("#Cartable").is(':empty')) {
+        getCar();
     }
     else {
-        $("#DatabaseContentCars").empty();
+        $("#Cartable").empty();
     }
 
 }
 
-function ManufacturerLoad() {
+function ManufacturerOpen() {
 
-    if ($("#DatabaseContentManufacturers").is(':empty')) {
-        openManufacturer();
+    if ($("#Manufacturertable").is(':empty')) {
+        getManufacturer();
     }
     else {
-        $("#DatabaseContentManufacturers").empty();
+        $("#Manufacturertable").empty();
     }
 
 }
 
-function ManufacturerCookie(man) {
-    document.cookie = "name=" + man;
+function ManufacturerCookie(manufacturecookie) {
+    document.cookie = "name=" + manufacturecookie;
     $.getJSON('manufacturer', function (data) {
-        /*for(var i=0;i<data.length;i++)
-        alert(data[i].name);*/
 
-        var table = $('<table class="CookieTable"></table>');
+        var table = $('<table class="ManuCookie"></table>');
         table.append("<tr><th>Name</th><th>Consumption</th><th>Color</th><th>Manufacturer</th><th>Year</th><th>Available</th><th>Horsepower</th></tr>");
 
         $.each(data, function (key, value) {
@@ -155,7 +153,7 @@ function ManufacturerCookie(man) {
             table.append(row);
 
         });
-        $("#CookieTable").html(table);
+        $("#ManuCookie").html(table);
     })
 
 }
