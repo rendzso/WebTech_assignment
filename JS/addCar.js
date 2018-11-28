@@ -1,3 +1,6 @@
+
+$(ManufacturerNames());
+
 $(function () {
     $('form').on("submit", function (e) {
         e.preventDefault();
@@ -24,10 +27,11 @@ function ManufacturerNames() {
 
         $.each(data, function (key, value) {
             output.push('<option value="' + value + '">' + value + '</option>');
+
         });
 
         $("#ManufacturerNameList").html(output);
     });
 }
 
-$(ManufacturerNames());
+
