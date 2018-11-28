@@ -1,0 +1,39 @@
+#submit{
+    background-color: black;
+    border: 3px solid #da0004;
+    padding: 10px 25px;
+    margin-top: 15px;
+    display: inline-block;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 15px;
+    color: whitesmoke;
+    text-decoration: none;
+    box-shadow: 3px 6px 6px #88707a;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+#submit:hover:active {
+    box-shadow: 3px 6px 6px #610004;
+    transform: translateY(4px);
+    transition-duration: 0.1s;
+}
+
+#submit:hover{
+    background-color: #da0004;
+    border: 3px solid black;
+    color: black;
+    text-decoration: none;
+    box-shadow: 3px 6px 6px #7e0004;
+    transition-duration: 0.5s;
+}
+
+
+table{
+    text-align: left;
+    margin-left: 10%;
+    border: 2px solid whitesmoke;
+    background-color: #7e0004;
+    padding: 15px;
+}
