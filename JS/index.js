@@ -43,7 +43,7 @@ function getCar() {
             }
         );
 
-
+        $("#Manufacturertable").empty();
         $("#Cartable").html(table);
 
     })
