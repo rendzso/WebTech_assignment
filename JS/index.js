@@ -54,7 +54,7 @@ function openCar() {
 function openManufacturer() {
     $.getJSON('manufacturers', function (data) {
         var table = $('<table></table>');
-        table.append("<tr><th>Name</th><th>Consumption</th><th>Color</th></tr>");
+        table.append("<tr><th>Name</th><th>Contry</th><th>Date</th></tr>");
 
         $.each(data, function (key, value) {
                 var row = $('<tr></tr>');
@@ -124,5 +124,39 @@ function ManufacturerLoad() {
     else {
         $("#DatabaseContentManufacturers").empty();
     }
+
+}
+
+function ManufacturerCookie(man) {
+    document.cookie = "name=" + man;
+    $.getJSON('manufacturer', function (data) {
+        /*for(var i=0;i<data.length;i++)
+        alert(data[i].name);*/
+
+        var table = $('<table class="CookieTable"></table>');
+        table.append("<tr><th>Name</th><th>Consumption</th><th>Color</th><th>Manufacturer</th><th>Year</th><th>Available</th><th>Horsepower</th></tr>");
+
+        $.each(data, function (key, value) {
+            var row = $('<tr class="notFirstRow"></tr>');
+            var nameCell = $('<td >' + value.name + ' </td>');
+            var consumptionCell = $('<td>' + value.consumption + '</td>');
+            var colorCell = $('<td>' + value.color + '</td>');
+            var manufacturerCell = $('<td>' + value.manufacturer + '</td>');
+            var yearCell = $('<td>' + value.year + '</td>');
+            var availableCell = $('<td>' + value.available + '</td>');
+            var horsepowerCell = $('<td>' + value.horsepower + '</td>');
+
+            row.append(nameCell);
+            row.append(consumptionCell);
+            row.append(colorCell);
+            row.append(manufacturerCell);
+            row.append(yearCell);
+            row.append(availableCell);
+            row.append(horsepowerCell);
+            table.append(row);
+
+        });
+        $("#CookieTable").html(table);
+    })
 
 }

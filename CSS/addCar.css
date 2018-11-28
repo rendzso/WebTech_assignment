@@ -29,11 +29,12 @@
     transition-duration: 0.5s;
 }
 
-
 table{
     text-align: left;
     margin-left: 10%;
     border: 2px solid whitesmoke;
     background-color: #7e0004;
     padding: 15px;
+    color: whitesmoke;
+    border-radius: 20px;
 }
